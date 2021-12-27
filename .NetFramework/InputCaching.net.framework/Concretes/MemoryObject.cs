@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace InputCaching.net.framework
 {
