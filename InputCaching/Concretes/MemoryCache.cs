@@ -8,6 +8,7 @@ namespace InputCaching
 {
     public class MemoryCache:IMemoryCache
     {
+        private const int MaxSize = 20;
         private static readonly object _lock = new object();
         private static MemoryCache _instance = null;
         public static MemoryCache Collection
@@ -26,24 +27,24 @@ namespace InputCaching
             }
         }
 
-        private const int size = 20;
-        public List<string> maps = new List<string>();
+        
+        public List<string> container = new List<string>();
         public void Reset()
         {
-            _instance.maps.Clear();
+            _instance.container.Clear();
 
         }
 
         public bool Exist(MemoryObject hash)
         {
             var matched = false;
-            for (int i = 0; i < this.maps.Count; i++)
+            for (int i = 0; i < this.container.Count; i++)
             {
-                if (_instance.maps[i] == null)
+                if (_instance.container[i] == null)
                 {
                     return false;
                 }
-                if (_instance.maps[i] == hash.Hash())
+                if (_instance.container[i] == hash.Hash())
                 {
                     matched = true;
                     return true;
@@ -52,16 +53,16 @@ namespace InputCaching
             return matched;
         }
 
-        public bool Push(MemoryObject hash)
+        public bool Push(MemoryObject Object)
         {
 
 
-            if (!Exist(hash))
+            if (!Exist(Object))
             {
                 //hash.AddedOn = DateTime.Now;
                 // hash.Id = id++;
                 Pop();
-                _instance.maps.Add(hash.Hash());
+                _instance.container.Add(Object.Hash());
                 return true;
             }
             else
@@ -75,9 +76,9 @@ namespace InputCaching
         }
         public void Pop()
         {
-            if (_instance.maps.Count == size)
+            if (_instance.container.Count == MaxSize)
             {
-                _instance.maps = _instance.maps.Skip(1).ToList();
+                _instance.container = _instance.container.Skip(1).ToList();
             }
         }
     }
