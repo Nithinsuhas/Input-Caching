@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputCaching", "InputCaching\InputCaching.csproj", "{56DF2239-91A0-4530-A18D-A31268808E72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputCaching", "InputCaching\InputCaching.csproj", "{56DF2239-91A0-4530-A18D-A31268808E72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1C458E5A-549E-4CDA-94E3-F7C9220AEA19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetFramework", ".NetFramework", "{066A6324-EDD1-4CD8-A75B-644CCF6B67BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputCaching.net.framework", ".NetFramework\InputCaching.net.framework\InputCaching.net.framework.csproj", "{52344616-8179-4978-96FA-21A372044244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{56DF2239-91A0-4530-A18D-A31268808E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56DF2239-91A0-4530-A18D-A31268808E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56DF2239-91A0-4530-A18D-A31268808E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52344616-8179-4978-96FA-21A372044244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52344616-8179-4978-96FA-21A372044244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52344616-8179-4978-96FA-21A372044244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52344616-8179-4978-96FA-21A372044244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56DF2239-91A0-4530-A18D-A31268808E72} = {1C458E5A-549E-4CDA-94E3-F7C9220AEA19}
+		{52344616-8179-4978-96FA-21A372044244} = {066A6324-EDD1-4CD8-A75B-644CCF6B67BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C61ED0A1-667C-490A-9F8B-C6DD980A59C8}
