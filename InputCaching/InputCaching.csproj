@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>NithinSuhas</Authors>
+    <Description>solution to add input caching to your web api project</Description>
+    <Copyright>open source</Copyright>
+    <PackageProjectUrl>https://github.com/Nithinsuhas/Input-Caching</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nithinsuhas/Input-Caching</RepositoryUrl>
+    <PackageTags>input;caching;webapi;duplicatedPost;requests;webapicaching;.net;core;</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>
