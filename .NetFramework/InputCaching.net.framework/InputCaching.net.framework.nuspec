@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.2</version>
+    <authors>NithinSuhas</authors>
+    <title>$title$</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/Nithinsuhas/Input-Caching</projectUrl>
+    <description>Solution to cache .Net framework web api Inputs to avoid duplicated post requests</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>InputCaching Caching .NetFramwork WebApi Input Web Api</tags>
+    <readme>docs\README.md</readme>
+    <files>
+      <file src="..\README.md" target="docs\" />
+    </files>
+  </metadata>
+</package>
