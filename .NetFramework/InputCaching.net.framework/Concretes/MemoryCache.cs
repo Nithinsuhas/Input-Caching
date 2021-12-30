@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace InputCaching.net.framework
 {
-    public class MemoryCache:IMemoryCache
+    public class MemoryCache : IMemoryCache
     {
-        private const int MaxSize = 20;
+        /// <summary>
+        /// Initialize the collection with the size
+        /// </summary>
+        /// <param name="cacheSize"></param>
+        public MemoryCache(int cacheSize)
+        {
+            MemoryCache.MaxSize = cacheSize;
+        }
+
+        private static int MaxSize;
         private static readonly object _lock = new object();
         private static MemoryCache _instance = null;
         public static MemoryCache Collection
@@ -19,7 +28,7 @@ namespace InputCaching.net.framework
                 {
                     if (_instance == null)
                     {
-                        _instance = new MemoryCache();
+                        _instance = new MemoryCache(MaxSize);
 
                     }
                     return _instance;
@@ -27,7 +36,7 @@ namespace InputCaching.net.framework
             }
         }
 
-        
+
         public List<string> container = new List<string>();
         public void Reset()
         {

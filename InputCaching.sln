@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NetFramework", ".NetFramew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputCaching.net.framework", ".NetFramework\InputCaching.net.framework\InputCaching.net.framework.csproj", "{52344616-8179-4978-96FA-21A372044244}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web.test", "web.test", "{3A2BD7B5-EB0C-4324-A694-1E512052B38B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.api.test", "core.api.test\core.api.test.csproj", "{7559A473-C695-4E28-A48D-04AE8F1DF00B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{52344616-8179-4978-96FA-21A372044244}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52344616-8179-4978-96FA-21A372044244}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52344616-8179-4978-96FA-21A372044244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7559A473-C695-4E28-A48D-04AE8F1DF00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7559A473-C695-4E28-A48D-04AE8F1DF00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7559A473-C695-4E28-A48D-04AE8F1DF00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7559A473-C695-4E28-A48D-04AE8F1DF00B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{56DF2239-91A0-4530-A18D-A31268808E72} = {1C458E5A-549E-4CDA-94E3-F7C9220AEA19}
 		{52344616-8179-4978-96FA-21A372044244} = {066A6324-EDD1-4CD8-A75B-644CCF6B67BF}
+		{7559A473-C695-4E28-A48D-04AE8F1DF00B} = {3A2BD7B5-EB0C-4324-A694-1E512052B38B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C61ED0A1-667C-490A-9F8B-C6DD980A59C8}

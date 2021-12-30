@@ -9,7 +9,7 @@ namespace InputCaching.net.framework
     public abstract class MemoryObject: IMemoryObject
     {
         //public DateTime AddedOn;
-        public int Id;
+       // public int Id;
 
         public virtual string UniquCombo()
         {
