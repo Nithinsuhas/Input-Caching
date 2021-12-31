@@ -17,7 +17,7 @@ namespace InputCaching.net.framework
             MemoryCache.MaxSize = cacheSize;
         }
 
-        private static int MaxSize;
+        private static int MaxSize=20;
         private static readonly object _lock = new object();
         private static MemoryCache _instance = null;
         public static MemoryCache Collection
