@@ -11,6 +11,10 @@ Main purpose of this project is
 # Usage
 
 ```c#
+    /* In Starup.cs */
+    services.AddSingleton<IMemoryCache>(new MemoryCache(CollectoinSize));
+
+    /* In Controller */
     /* model must implement IMemoryObject Or Inherit from MemoryObject */
     var Collection = MemoryCache.Collection;
     if (Collection.Push(model))

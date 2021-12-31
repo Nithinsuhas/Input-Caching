@@ -33,7 +33,8 @@ namespace core.api.test
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "core.api.test", Version = "v1" });
             });
-            services.AddSingleton<IMemoryCache>(new MemoryCache(2));
+            int CollectoinSize = 10;
+            services.AddSingleton<IMemoryCache>(new MemoryCache(CollectoinSize));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

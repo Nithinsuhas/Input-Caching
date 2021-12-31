@@ -5,11 +5,15 @@ This Class library is developed using dot net core 6.
 Main purpose of this project is 
 
 - To add caching mechanism for .net web api projects
-- To avoid duplicated post requests.
+- To filter out duplicated post requests.
 
 # Usage
 
 ```c#
+    /* In Starup.cs */
+    services.AddSingleton<IMemoryCache>(new MemoryCache(CollectoinSize));
+
+    /* In Controller */
     /* model must implement IMemoryObject Or Inherit from MemoryObject */
     var Collection = MemoryCache.Collection;
     if (Collection.Push(model))
@@ -21,4 +25,5 @@ Main purpose of this project is
     {
         //Return appropriate Response
     }
+```
 ```
