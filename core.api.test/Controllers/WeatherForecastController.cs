@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SelectPdf;
 
 namespace core.api.test.Controllers
 {
@@ -25,16 +26,27 @@ namespace core.api.test.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public void Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var path = @"C:\Users\MM10041364\Desktop\lal.html";
+
+            HtmlToPdf converter = new HtmlToPdf();
+
+            // create a new pdf document converting an url
+            PdfDocument doc = converter.ConvertUrl(path);
+
+
+            var id = new Guid().ToString() + ".pdf";
+            // save pdf document
+            doc.Save(@"C:\Users\MM10041364\Desktop\pdf\" + id);
+            //var rng = new Random();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateTime.Now.AddDays(index),
+            //    TemperatureC = rng.Next(-20, 55),
+            //    Summary = Summaries[rng.Next(Summaries.Length)]
+            //})
+            //.ToArray();
         }
 
         [HttpPost]

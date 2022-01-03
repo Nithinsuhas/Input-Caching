@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package >
+<package>
   <metadata>
-    <id>$id$</id>
+    <id>InputCaching.net.framework</id>
     <version>1.0.2</version>
     <authors>NithinSuhas</authors>
     <title>$title$</title>
@@ -13,9 +13,12 @@
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>InputCaching Caching .NetFramwork WebApi Input Web Api</tags>
-    <readme>docs\README.md</readme>
-    <files>
-      <file src="..\README.md" target="docs\" />
-    </files>
+    <readme>docs/README.md</readme>
+
   </metadata>
+  <files>
+    <file src="bin\Release\InputCaching.net.framework.dll" target="lib\netstandard1.4\InputCaching.net.framework.dll" />
+    <file src="docs\README.md" target="docs\" />
+    <!-- <file src="bin\Release\InputCaching.net.framework.xml" target="lib\netstandard1.4\InputCaching.net.framework.xml" /> -->
+</files>
 </package>
