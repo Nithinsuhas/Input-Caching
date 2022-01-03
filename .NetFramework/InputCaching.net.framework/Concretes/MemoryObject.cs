@@ -6,10 +6,16 @@ using System.Linq;
 namespace InputCaching.net.framework
 {
 
-    public abstract class MemoryObject: IMemoryObject
+    public abstract class MemoryObject : IMemoryObject
     {
         //public DateTime AddedOn;
-       // public int Id;
+        // public int Id;
+
+
+        //private string _hash;
+
+        public string Hashed;
+
 
         public virtual string UniquCombo()
         {
@@ -18,14 +24,17 @@ namespace InputCaching.net.framework
         }
         public string Hash()
         {
-            var result = default(string);
-
-            using (var algo = new MD5CryptoServiceProvider())
+            if (string.IsNullOrEmpty(Hashed))
             {
-                result = GenerateHashString(algo, UniquCombo());
+                using (var algo = new MD5CryptoServiceProvider())
+                {
+                    Hashed = GenerateHashString(algo, UniquCombo());
+                }
+
             }
 
-            return result;
+
+            return Hashed;
         }
         private static string GenerateHashString(HashAlgorithm algo, string text)
         {
