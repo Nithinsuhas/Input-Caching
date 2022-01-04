@@ -17,8 +17,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Concretes\_MemoryCache.cs" />
+    <Compile Remove="Concretes\_MemoryObject.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <None Include="docs\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\.NetFramework\InputCaching.net.framework\InputCaching.net.framework.csproj" />
   </ItemGroup>
 
 </Project>

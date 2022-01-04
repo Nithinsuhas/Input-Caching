@@ -1,13 +1,6 @@
 ﻿namespace InputCaching
 {
-    public interface IMemoryObject
+    public interface IMemoryObject:net.framework.IMemoryObject
     {
-        //string UniquCombo();
-
-        /// <summary>
-        /// Should Generate a unique hash value for the input.
-        /// </summary>
-        /// <returns></returns>
-        string Hash();
     }
 }

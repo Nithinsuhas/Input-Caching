@@ -14,7 +14,32 @@ namespace InputCaching.net.framework
 
         //private string _hash;
 
-        public string Hashed;
+        //public string Hashed { get; private set; }
+        [JsonIgnore]
+        private bool _hashed = false;
+        [JsonIgnore]
+        private string __hash;
+        //public string Hashed
+        //{
+        //    get { return Hash(); }
+        //    private set { __hash = value; }
+        //}
+        [JsonIgnore]
+        private string _hash;
+        [JsonIgnore]
+        public string Hashed
+        {
+            get
+            {
+                if (_hashed)
+                    return _hash;
+                else
+                    return Hash();
+            }
+            private set { _hash = value; }
+        }
+
+
 
 
         public virtual string UniquCombo()
@@ -24,17 +49,16 @@ namespace InputCaching.net.framework
         }
         public string Hash()
         {
-            if (string.IsNullOrEmpty(Hashed))
+            if (!_hashed)
             {
                 using (var algo = new MD5CryptoServiceProvider())
                 {
-                    Hashed = GenerateHashString(algo, UniquCombo());
+                    _hash = GenerateHashString(algo, UniquCombo());
+                    _hashed = true;
                 }
 
             }
-
-
-            return Hashed;
+            return _hash;
         }
         private static string GenerateHashString(HashAlgorithm algo, string text)
         {
