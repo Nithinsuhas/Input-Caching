@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="InputCaching.net.framework" Version="1.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Select.HtmlToPdf.NetCore" Version="21.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\.NetFramework\InputCaching.net.framework\InputCaching.net.framework.csproj" />
   </ItemGroup>
 
 </Project>
