@@ -30,7 +30,7 @@ namespace core.api.test.Controllers
         [HttpPost]
         [Route("List")]
 
-        public IActionResult Post1([FromBody] mlist<Data> model)
+        public IActionResult Post1([FromBody] MemoryList<Data> model)
         {
             var Collection = MemoryCache.Collection;
             if (Collection.Push(model))
@@ -43,32 +43,6 @@ namespace core.api.test.Controllers
             }
         }
 
-
-        public class mlist<T> : List<T>, IMemoryObject
-        {
-            private bool _hashed = false;
-            private string _hash;
-            public string Hash()
-            {
-                if (!_hashed)
-                {
-                    using (var algo = new MD5CryptoServiceProvider())
-                    {
-                        var text = Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.None);
-                        algo.ComputeHash(System.Text.Encoding.UTF8.GetBytes(text));
-                        var result = algo.Hash;
-
-                        // Return as hexadecimal string
-                        this._hash = string.Join(
-                            string.Empty,
-                            result.Select(x => x.ToString("x2")));
-                        this._hashed = true;
-                    }
-
-                }
-                return _hash;
-            }
-        }
         public class Data : MemoryObject
         {
             public int Id { get; set; }

@@ -33,7 +33,7 @@ namespace core.api.test
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "core.api.test", Version = "v1" });
             });
-            int CollectoinSize = 10;
+            int CollectoinSize = 3;
             services.AddSingleton<IMemoryCache>(new MemoryCache(CollectoinSize));
         }
 

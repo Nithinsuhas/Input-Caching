@@ -15,15 +15,72 @@ Main purpose of this project is
     services.AddSingleton<IMemoryCache>(new MemoryCache(CollectoinSize));
 
     /* In Controller */
-    /* model must implement IMemoryObject Or Inherit from MemoryObject */
-    var Collection = MemoryCache.Collection;
-    if (Collection.Push(model))
+    /* For Objects */
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CacheTestController : ControllerBase
     {
-        //Collection does not contains the input, Proceed to operation
-        //Return result
+
+        [HttpPost]
+        public IActionResult Post([FromBody] Data model)
+        {
+            var Collection = MemoryCache.Collection;
+            if (Collection.Push(model))
+            {
+                /* 
+                Memory collection does not contains the object proceed to operation.
+                    keep in mind that the collecton only holds upto CollectoinSize specified by you.
+                */
+                return Ok("Added");
+            }
+            else
+            {
+
+                 /* 
+                A post request with same input has already recived, 
+                it is still containing inside the memory collection 
+                */
+                return BadRequest("Already Added");
+            }
+        }
+
+        [HttpPost]
+        [Route("List")]
+        public IActionResult PostList([FromBody] MemoryList<Data> model)
+        {
+            /*
+            MemoryList is an extenstion of list, You will have all operations of list.
+            */
+            var Collection = MemoryCache.Collection;
+            if (Collection.Push(model))
+            {
+                /* 
+                Memory collection does not contains the object proceed to operation.
+                    keep in mind that the collecton only holds upto CollectoinSize specified by you.
+                */
+                return Ok("Added");
+            }
+            else
+            {
+                /* 
+                A post request with same input has already recived, 
+                it is still containing inside the memory collection 
+                */
+                return BadRequest("Already Added");
+            }
+        }
+
+        
     }
-    else
+
+
+
+
+    public class Data : MemoryObject
     {
-        //Return appropriate Response
+        public int Id { get; set; }
+        public string Code { get; set; }
     }
+
 ```

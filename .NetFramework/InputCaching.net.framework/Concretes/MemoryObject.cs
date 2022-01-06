@@ -76,5 +76,30 @@ namespace InputCaching.net.framework
     }
 
 
-  
+    public class MemoryList<T> : System.Collections.Generic.List<T>, IMemoryObject
+    {
+        private bool _hashed = false;
+        private string _hash;
+        public string Hash()
+        {
+            if (!_hashed)
+            {
+                using (var algo = new MD5CryptoServiceProvider())
+                {
+                    var text = Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.None);
+                    algo.ComputeHash(System.Text.Encoding.UTF8.GetBytes(text));
+                    var result = algo.Hash;
+
+                    // Return as hexadecimal string
+                    this._hash = string.Join(
+                        string.Empty,
+                        result.Select(x => x.ToString("x2")));
+                    this._hashed = true;
+                }
+
+            }
+            return _hash;
+        }
+    }
+
 }

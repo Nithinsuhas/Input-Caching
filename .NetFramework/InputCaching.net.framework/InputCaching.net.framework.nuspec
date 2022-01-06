@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>InputCaching.net.framework</id>
-    <version>1.0.2</version>
+    <version>1.0.6</version>
     <authors>NithinSuhas</authors>
     <title>$title$</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,9 +10,9 @@
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/Nithinsuhas/Input-Caching</projectUrl>
     <description>Solution to cache .Net framework web api Inputs to avoid duplicated post requests</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>Changes to accomodate Lists inputs</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags>InputCaching Caching .NetFramwork WebApi Input Web Api</tags>
+    <tags>InputCaching Caching .NetFramwork WebApi Input Web Api POST</tags>
     <readme>docs/README.md</readme>
 
   </metadata>
