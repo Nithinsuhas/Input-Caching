@@ -9,5 +9,6 @@
         /// </summary>
         /// <returns></returns>
         string Hash();
+
     }
 }

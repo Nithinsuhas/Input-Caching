@@ -44,7 +44,7 @@ namespace InputCaching.net.framework
 
         }
 
-        public bool Exist(MemoryObject hash)
+        public bool Exist(IMemoryObject hash)
         {
             var matched = false;
             for (int i = 0; i < this.container.Count; i++)
@@ -62,7 +62,7 @@ namespace InputCaching.net.framework
             return matched;
         }
 
-        public bool Push(MemoryObject Object)
+        public bool Push(IMemoryObject Object)
         {
 
 

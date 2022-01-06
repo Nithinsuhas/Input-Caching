@@ -74,4 +74,7 @@ namespace InputCaching.net.framework
                 result.Select(x => x.ToString("x2")));
         }
     }
+
+
+  
 }

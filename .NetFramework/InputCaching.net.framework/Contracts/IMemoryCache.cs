@@ -13,13 +13,13 @@ namespace InputCaching.net.framework
         /// </summary>
         /// <param name="Object"></param>
         /// <returns>True if Exists False if not</returns>
-        bool Exist(MemoryObject Object);
+        bool Exist(IMemoryObject Object);
         /// <summary>
         /// Adds a new Object to the collection after checking the existance status.
         /// </summary>
         /// <param name="Object"></param>
         /// <returns>True if added, false if already exists</returns>
-        bool Push(MemoryObject Object);
+        bool Push(IMemoryObject Object);
         /// <summary>
         /// Removes the First Object from the collection
         /// </summary>
